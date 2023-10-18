@@ -28,7 +28,7 @@ img {
   display: block;
 }
 
-/* header */
+/* ============================================ HEADER ============================================  */
 
 .container {
   max-width: 1158px;
@@ -72,12 +72,26 @@ align-items: center;
   text-transform: uppercase;
 }
 .navigation-menu-list {
-  padding: 24px 0;
+  display: flex;
+  flex-direction: column;
 }
 .navigation-menu-item {
   color: var(--NAVY-BLUE, #2e2f42);
   font-weight: 500;
-  padding: 24px 0;
+  padding-top: 24px;
+  padding-bottom: 20px;
+}
+.navigation-menu .navigation-menu-list::after,
+.navigation-menu .navigation-menu-list::after {
+  width: 100%;
+  height: 4px;
+  border-radius: 2px;
+  background: var(--WHITE, #fff);
+  content: "";
+}
+.navigation-menu .navigation-menu-list:focus::after,
+.navigation-menu .navigation-menu-list:hover::after {
+  background: var(--OCEAN, #404BBF);
 }
 .navigation-menu-item:hover,
 .navigation-menu-item:focus {
@@ -98,13 +112,16 @@ align-items: center;
   color: var(--OCEAN, #404bbf);
 }
 
-
-/* hero */
+/* ========================================= HERO ========================================= */
 
 .titel-page {
-  background: var(--NAVY-BLUE, #2e2f42);
   margin: 0;
   padding: 188px 0;
+  background-image: linear-gradient(to bottom, rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)), url(../images/people-office.jpg);
+  background-color: var(--NAVY-BLUE, #2e2f42);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
 .titel-page .container {
   flex-direction: column;
@@ -142,7 +159,7 @@ align-items: center;
 }
 
 
-/* Section 1 */
+/* ======================================= SECTION 1 =======================================  */
 .section {
   padding-top: 120px;
   padding-bottom: 120px;
@@ -179,8 +196,15 @@ width: calc((100% - 72px) / 4);
   letter-spacing: 0.02em;
   margin-bottom: 8px;
 }
+.features-section-picture {
+  padding: 24px 100px;
+  border-radius: 4px;
+  border: 1px solid var(--LIGHT-SLATE, #8E8F99);
+  background: var(--CLOUD, #F4F4FD);
+  margin-bottom: 8px;
+}
 
-/* Section 2 */
+/* ======================================= SECTION 2 =======================================  */
 .section-team {
   padding-top: 120px;
   padding-bottom: 120px;
@@ -212,7 +236,7 @@ width: calc((100% - 72px) / 4);
   box-shadow: 0px 2px 1px 0px rgba(46, 47, 66, 0.08), 0px 1px 1px 0px rgba(46, 47, 66, 0.16), 0px 1px 6px 0px rgba(46, 47, 66, 0.08);
 }
 .section-team-block {
-  padding: 32px 0;
+  margin: 32px 16px;
 display: flex;
 flex-direction: column;
 }
@@ -222,11 +246,29 @@ margin-bottom: 8px;
 }
 .team-section-item-description {
   text-align: center;
+  margin-bottom: 8px;
+}
+.social-links {
+  display: flex;
+  gap: 24px;
+  justify-content: flex-start;
+}
+.social-links .link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: var(--IRIS, #4D5AE5);
+  fill: #FFF;
+}
+.social-links .link:hover, .social-links .link:focus {
+  background-color: var(--OCEAN, #404BBF);
 }
 
 
-
-/* Section 3 */
+/* ======================================= SECTION 3 =======================================  */
 .section .container {
   flex-direction: column;
 }
@@ -267,14 +309,17 @@ letter-spacing: 0.02em;
   margin-bottom: 8px;
 }
 
-/* Footer */
+/* ======================================= FOOTER =======================================  */
 
 .footer-section {
   background: var(--NAVY-BLUE, #2e2f42);
  padding: 100px 0;
 }
 .footer-section .container {
-  flex-direction: column;
+  display: flex;
+}
+.footer-logo-block {
+margin-right: 120px;
 }
 .logo-first-part-down {
   display: inline-block;
@@ -287,7 +332,6 @@ letter-spacing: 0.02em;
   text-transform: uppercase;
   margin-bottom: 16px;
 }
-
 .logo-second-part-down {
   color: var(--CLOUD, #f4f4fd);
   font-family: 'Raleway', sans-serif;
@@ -300,4 +344,16 @@ letter-spacing: 0.02em;
 .footer-description {
   color: var(--CLOUD, #f4f4fd);
   width: 264px;
+}
+.footer-links-titel {
+  font-size: 16px;
+  color: var(--WHITE, #FFF);
+  font-weight: 500;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+  margin-bottom: 16px;
+}
+.footer-links .link:hover,
+.footer-links .link:focus {
+  background-color: var(--GREEN, #31D0AA);
 }
